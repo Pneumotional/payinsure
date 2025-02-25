@@ -1,0 +1,97 @@
+{% extends 'details/base.html' %}
+
+{% block title %}Motor Insurance Form{% endblock %}
+
+{% block content %}
+<!-- As a link -->
+  <!-- As a heading -->
+   <div class="container">
+    <h1 class="mb-5 mt-5 text-center" style="font-weight: 600;">Insurance Purchase Portal</h1>
+   </div>
+<div class="form-container">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="card">
+                                    <h4 class="mb-4">Customer Details</h4>
+                                    <div class="form-group">
+                                        {{ customer_form.name.label }}
+                                        {{ customer_form.name }}
+                                    </div>
+                                       <div class="form-group">
+                                        {{ customer_form.phone_number.label }}
+                                        {{ customer_form.phone_number }}  
+                                       </div>
+                                       <div class="form-group">
+                                            {{ customer_form.date_of_birth.label }}
+                                            {{ customer_form.date_of_birth }}
+                                       </div>
+                                       <div class="form-group">
+                                            {{ customer_form.email.label }}
+                                            {{ customer_form.email }}
+                                       </div>
+                                       <div class="form-group">
+                                            {{ customer_form.customer_type.label }}
+                                            {{ customer_form.customer_type }}
+                                       </div>
+                                       </div>
+
+                            </div>
+                            
+                            <div class="col-4">
+                                <div class="card">
+                                    <h4 class="mb-4">Product Details</h4>
+                                    <div class="form-group">
+                                        {{ product_form.usage_type.label }}
+                                        {{ product_form.usage_type }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ product_form.make.label }}
+                                        {{ product_form.make }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ product_form.model.label }}
+                                        {{ product_form.model }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ product_form.manufacturing_year.label }}
+                                        {{ product_form.manufacturing_year }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ product_form.chassis_number.label }}
+                                        {{ product_form.chassis_number }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ product_form.vehicle_colour.label }}
+                                        {{ product_form.vehicle_colour }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ product_form.start_date.label }}
+                                        {{ product_form.start_date }}
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="card">
+                                        <h4 class="mb-4 mt-5">Referral Details</h4>
+                                    <div class="form-group">
+                                        {{ referral_form.referral_type.label }}
+                                        {{ referral_form.referral_type }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ referral_form.agent_code.label }}
+                                        {{ referral_form.agent_code }}
+                                    </div>
+        
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary">Submit Details</button>
+                                </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+{% endblock %}
